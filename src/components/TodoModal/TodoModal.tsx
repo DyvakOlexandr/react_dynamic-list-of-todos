@@ -38,7 +38,9 @@ export const TodoModal: React.FC<Props> = ({
           </header>
 
           <div className="modal-card-body">
-            <p className="block" data-cy="modal-title"></p>
+            <p className="block" data-cy="modal-title">
+              quis ut nam facilis et officia qui
+            </p>
 
             <p className="block" data-cy="modal-user">
               {currentTodo ? (

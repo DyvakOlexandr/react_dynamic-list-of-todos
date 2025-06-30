@@ -12,7 +12,7 @@ import { Todo } from './types/Todo';
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [user, setUser] = useState<User | null>(null);
-  const [modalWindow, setModalWindow] = useState(false);
+  const [modalWindow, isModalWindowOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [userLoading, setUserLoading] = useState<boolean>(false);
   const [query, setQuery] = useState('all');
@@ -61,13 +61,13 @@ export const App: React.FC = () => {
         setUser(res);
       })
       .finally(() => {
-        setModalWindow(true);
+        isModalWindowOpen(true);
         setUserLoading(false);
       });
   };
 
   const handleModalWindow = (value: boolean) => {
-    setModalWindow(value);
+    isModalWindowOpen(value);
   };
 
   return (

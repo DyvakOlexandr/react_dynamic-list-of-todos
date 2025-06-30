@@ -69,7 +69,10 @@ export const TodoList: React.FC<Props> = ({
                 </td>
                 <td className="has-text-right is-vcentered">
                   <button
-                    onClick={() => setModalWindow(true)}
+                    onClick={event => {
+                      event.stopPropagation();
+                      setModalWindow(true);
+                    }}
                     data-cy="selectButton"
                     className="button"
                     type="button"
